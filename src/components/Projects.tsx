@@ -26,23 +26,34 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-gradient">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <Card key={index} className="slide-up hover:shadow-lg transition-shadow">
+            <Card 
+              key={index} 
+              className="card-hover border-gradient"
+              style={{ 
+                animationDelay: `${index * 200}ms`,
+                opacity: 0,
+              }}
+            >
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover rounded-t-lg"
               />
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-gradient">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary">
+                    <Badge 
+                      key={techIndex} 
+                      variant="secondary"
+                      className="glow-on-hover"
+                    >
                       {tech}
                     </Badge>
                   ))}

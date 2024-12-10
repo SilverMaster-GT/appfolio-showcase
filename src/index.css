@@ -33,15 +33,52 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(circle at center, hsl(267 83% 74% / 0.1) 0%, transparent 70%);
   }
 }
 
 .fade-in {
-  animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 0.8s ease-in;
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
 .slide-up {
-  animation: slideUp 0.5s ease-out;
+  animation: slideUp 0.8s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.glow-on-hover {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.glow-on-hover::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, hsl(267 83% 74%), hsl(260 25% 16%));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-on-hover:hover::after {
+  opacity: 1;
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -10px hsl(267 83% 74% / 0.3);
 }
 
 @keyframes fadeIn {
@@ -55,11 +92,48 @@
 
 @keyframes slideUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
   }
   to {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 hsl(267 83% 74% / 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px hsl(267 83% 74% / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 hsl(267 83% 74% / 0);
+  }
+}
+
+.animate-pulse-purple {
+  animation: pulse 2s infinite;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, hsl(267 83% 74%), hsl(260 25% 80%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(45deg, hsl(267 83% 74%), transparent) border-box;
+}
+
+.skill-card {
+  backdrop-filter: blur(8px);
+  background: linear-gradient(145deg, 
+    hsl(260 25% 16% / 0.9),
+    hsl(260 25% 16% / 0.4)
+  );
 }
