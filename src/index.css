@@ -16,8 +16,8 @@
     --secondary-foreground: 0 0% 100%;
     --muted: 260 25% 16%;
     --muted-foreground: 260 25% 80%;
-    --accent: 267 83% 74%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 213 95% 91%;
+    --accent-foreground: 260 25% 11%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 260 25% 16%;
@@ -64,7 +64,7 @@
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(45deg, hsl(267 83% 74%), hsl(260 25% 16%));
+  background: linear-gradient(45deg, hsl(267 83% 74%), hsl(213 95% 91%));
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
@@ -81,7 +81,9 @@
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px hsl(267 83% 74% / 0.3);
+  box-shadow: 
+    0 10px 30px -10px hsl(267 83% 74% / 0.3),
+    0 5px 15px -5px hsl(213 95% 91% / 0.2);
 }
 
 @keyframes fadeIn {
@@ -121,7 +123,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(45deg, hsl(267 83% 74%), hsl(260 25% 80%));
+  background: linear-gradient(45deg, hsl(267 83% 74%), hsl(213 95% 91%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -130,7 +132,7 @@
 .border-gradient {
   border: 2px solid transparent;
   background: linear-gradient(var(--background), var(--background)) padding-box,
-              linear-gradient(45deg, hsl(267 83% 74%), transparent) border-box;
+              linear-gradient(45deg, hsl(267 83% 74%), hsl(213 95% 91%)) border-box;
 }
 
 .skill-card {
