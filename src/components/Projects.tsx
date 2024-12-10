@@ -4,21 +4,21 @@ import { useEffect, useRef } from "react";
 
 const projects = [
   {
-    title: "Project 1",
-    description: "A full-stack web application built with React and Node.js",
-    tech: ["React", "Node.js", "MongoDB", "TypeScript"],
+    title: "AWS COGNITO AUTHENTICATION API",
+    description: "Backend para manejo de autenticacion con Cognito, maneja todo lo necesario para inicio de sesión, creacion de usuario, reinicio de contraseñas.",
+    tech: ["Express.js", "Node.js", "Cognito", "JavaScript"],
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
   },
   {
-    title: "Project 2",
-    description: "E-commerce platform with real-time updates",
-    tech: ["Vue.js", "Firebase", "Tailwind CSS"],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80"
+    title: "Proyecto Apuntes",
+    description: "Plataforma practica para apuntes cifrados, sencilla, sin complicaciones",
+    tech: ["Vue.js 3", "Element+", "Firebase"],
+    image: "/apuntes.png"
   },
   {
-    title: "Project 3",
-    description: "Mobile-first social media dashboard",
-    tech: ["React Native", "GraphQL", "AWS"],
+    title: "Pendiente",
+    description: "En proceso de construccion de Time Tracker",
+    tech: ["React.js", "Shadcn/ui", "Tailwind", "Vite"],
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
   }
 ];

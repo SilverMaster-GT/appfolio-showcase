@@ -10,17 +10,20 @@ const Hero = () => {
     <section className="min-h-screen flex flex-col justify-center items-center text-center px-4 py-16">
       <div className="fade-in space-y-6 max-w-3xl">
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-          Full Stack Developer
+          Victor Roberto López Marroquín
         </h1>
+        <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+          Full Stack Developer
+        </h2>
         <p className="text-xl md:text-2xl text-muted-foreground">
-          Building beautiful and functional web applications with modern technologies
+          Creación de aplicaciones web hermosas y funcionales con tecnologías modernas.
         </p>
         <div className="flex gap-4 justify-center">
           <Button onClick={scrollToProjects} size="lg">
-            View My Work
+            Ver mi Trabajo
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <a href="#contact">Contact Me</a>
+            <a href="#contact">Contactame</a>
           </Button>
         </div>
       </div>

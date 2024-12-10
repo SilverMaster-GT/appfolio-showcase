@@ -15,24 +15,24 @@ const Contact = () => {
       <div className="max-w-xl mx-auto">
         <Card className="slide-up">
           <CardHeader>
-            <CardTitle>Get in Touch</CardTitle>
+            <CardTitle>Ponte en contacto</CardTitle>
             <CardDescription>
-              Have a project in mind? Let's work together!
+              ¿Tienes un proyecto en mente? ¡Trabajemos juntos!
             </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="space-y-2">
-                <Input placeholder="Your Name" required />
+                <Input placeholder="Tú nombre" required />
               </div>
               <div className="space-y-2">
-                <Input type="email" placeholder="Your Email" required />
+                <Input type="email" placeholder="Tú correo" required />
               </div>
               <div className="space-y-2">
-                <Textarea placeholder="Your Message" required />
+                <Textarea placeholder="Tú Mensaje" required />
               </div>
               <Button type="submit" className="w-full">
-                Send Message
+                Enviar Mensaje
               </Button>
             </form>
           </CardContent>

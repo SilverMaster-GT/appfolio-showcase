@@ -11,17 +11,17 @@ const skillCategories = [
   {
     title: "Backend",
     icon: <Database className="w-6 h-6 mb-4" />,
-    skills: ["Node.js", "Python", "PostgreSQL", "MongoDB"]
+    skills: ["Node.js", "Python", "PostgreSQL", "MongoDB", "Mysql", "Cognito", "Apache"]
   },
   {
     title: "DevOps",
     icon: <Globe className="w-6 h-6 mb-4" />,
-    skills: ["Docker", "AWS", "CI/CD", "Linux"]
+    skills: ["Docker", "AWS", "CI/CD", "Linux", "Apache", "Cpanel", "Azure"]
   },
   {
     title: "Languages",
     icon: <Code2 className="w-6 h-6 mb-4" />,
-    skills: ["JavaScript", "TypeScript", "Python", "SQL"]
+    skills: ["JavaScript", "TypeScript", "Python", "SQL", "PHP", ".NET"]
   }
 ];
 
