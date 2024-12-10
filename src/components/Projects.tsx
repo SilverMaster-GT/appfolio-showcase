@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useRef } from "react";
 
 const projects = [
   {
@@ -23,25 +24,56 @@ const projects = [
 ];
 
 const Projects = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.project-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                (card as HTMLElement).style.opacity = '1';
+                (card as HTMLElement).style.transform = 'translateY(0)';
+              }, index * 200);
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="projects" className="py-16 px-4">
+    <section ref={sectionRef} id="projects" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold mb-12 text-center text-gradient">Featured Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="card-hover border-gradient"
+              className="project-card border-gradient transition-all duration-500 hover:scale-105"
               style={{ 
-                animationDelay: `${index * 200}ms`,
                 opacity: 0,
+                transform: 'translateY(20px)',
+                transition: 'all 0.5s ease-out'
               }}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-t-lg"
-              />
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+              </div>
               <CardHeader>
                 <CardTitle className="text-gradient">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>

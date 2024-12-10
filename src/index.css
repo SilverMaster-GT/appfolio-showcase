@@ -33,7 +33,10 @@
   }
   body {
     @apply bg-background text-foreground;
-    background-image: radial-gradient(circle at center, hsl(267 83% 74% / 0.1) 0%, transparent 70%);
+    background-image: 
+      radial-gradient(circle at center, hsl(267 83% 74% / 0.1) 0%, transparent 70%),
+      linear-gradient(to bottom right, hsl(260 25% 11%), hsl(260 25% 8%));
+    min-height: 100vh;
   }
 }
 
