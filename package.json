@@ -1,12 +1,15 @@
 {
+  "homepage":"https://github.com/SilverMaster-GT/appfolio-showcase",
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && read -p 'Press any key to continue...'",
     "build:dev": "vite build --mode development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
